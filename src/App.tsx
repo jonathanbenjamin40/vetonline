@@ -111,7 +111,7 @@ const Timeline = () => {
   ];
 
   return (
-    <div className="relative py-32 overflow-x-auto scrollbar-hide">
+    <div className="relative py-32 overflow-x-auto scrollbar-hide w-full">
       <div className="min-w-[1400px] px-10 relative">
         {/* Central Line */}
         <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-brand-silver/30 -translate-y-1/2" />
@@ -979,7 +979,7 @@ export default function App() {
   return (
     <div className="flex min-h-screen bg-slate-50 font-sans" dir="rtl">
       {/* Sidebar */}
-      <aside className="w-80 bg-white border-l border-brand-silver/30 sticky top-0 h-screen overflow-y-auto hidden md:block">
+      <aside className="w-80 shrink-0 bg-white border-l border-brand-silver/30 fixed top-0 right-0 h-screen overflow-y-auto hidden md:block z-30">
         <div className="p-6 border-b border-brand-silver/20">
           <div className="flex items-center gap-3 text-brand-red mb-2">
             <Stethoscope className="w-8 h-8" />
@@ -1024,7 +1024,7 @@ export default function App() {
       </div>
 
       {/* Main Content */}
-      <main className="flex-1 p-6 md:p-12 mt-16 md:mt-0">
+      <main className="flex-1 w-full min-w-0 p-6 md:p-12 mt-16 md:mt-0 md:mr-80 overflow-x-hidden">
         <header className="mb-12">
           <motion.div
             key={activeSection.id}
@@ -1048,6 +1048,7 @@ export default function App() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.2 }}
+            className="w-full"
           >
             {activeSection.content}
           </motion.div>
