@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&family=Dancing+Script:wght@400;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Assistant", ui-sans-serif, system-ui, sans-serif;
+  --font-signature: "Dancing Script", cursive;
+  --color-brand-red: #d42a35;
+  --color-brand-dark: #052d59;
+  --color-brand-gray: #ebecef;
+  --color-brand-pink: #e18087;
+  --color-brand-muted: #607690;
+  --color-brand-pale: #e5acaf;
+  --color-brand-blue: #324e70;
+  --color-brand-silver: #a9b2be;
+  
+  --color-crm-primary: #052d59;
+  --color-crm-accent: #d42a35;
+}
+
+@layer base {
+  body {
+    @apply bg-[#ebecef] text-[#052d59] font-sans;
+    direction: rtl;
+  }
+}
+
+.glass-card {
+  @apply bg-white/90 backdrop-blur-md border border-[#a9b2be]/30 shadow-sm;
+}
+
+.field-bubble {
+  @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#ebecef] text-[#324e70] border border-[#a9b2be]/50 text-sm font-medium shadow-sm transition-all hover:bg-white hover:border-[#d42a35]/50;
+}
+
+.status-bubble {
+  @apply inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-white text-sm font-bold shadow-sm;
+}
+
+.section-title {
+  @apply text-2xl font-bold text-[#052d59] border-b-2 border-[#d42a35] pb-2 mb-6 inline-block;
+}
+
+.sidebar-item {
+  @apply flex items-center gap-3 px-4 py-3 rounded-xl transition-all cursor-pointer text-[#607690] hover:bg-[#a9b2be]/10;
+}
+
+.sidebar-item.active {
+  @apply bg-[#052d59] text-white shadow-md shadow-[#052d59]/20;
+}
+
